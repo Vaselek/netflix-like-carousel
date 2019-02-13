@@ -1,11 +1,19 @@
 <template>
-  <div class="movie" @mouseover="mouseOver" @mouseleave="mouseLeave" :key="movie.key">
+  <div class="movie"
+       @mouseover="mouseOver"
+       @mouseleave="mouseLeave"
+       :key="movie.key">
     <div class="movie__media">
-      <video ref="videoElem" class="movie__video" muted="true">
-        <source :src="movie.videoSrc" type="video/mp4">
+      <video ref="videoElem"
+             class="movie__video"
+             muted="true">
+        <source :src="movie.videoSrc"
+                type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <img class="movie__img" :src="movie.imgSrc" alt=""  />
+      <img class="movie__img"
+           :src="movie.imgSrc"
+           alt=""  />
     </div>
     <MovieDetails :details="movie.details"/>
   </div>
@@ -14,7 +22,9 @@
 import MovieDetails from './MovieDetails'
 export default {
   name: 'MovieItem',
-  props: ['movie'],
+  props: {
+    movie: Object
+  },
   methods: {
     mouseOver: function () {
       this.$refs.videoElem.play()

@@ -4,7 +4,8 @@
       {{ details.title | truncate(30, '...') }}
     </div>
     <div>
-      <span class="movie__age">{{details.age}}+</span><span class="movie__seasons">{{details.seasonsQty}} seasons</span>
+      <span class="movie__age">{{details.age}}+</span>
+      <span class="movie__seasons">{{details.seasonsQty}} seasons</span>
     </div>
     <div class="movie__genre">
       {{ details.genres | listGenres() }}
@@ -14,7 +15,9 @@
 <script>
 export default {
   name: 'MovieDetails',
-  props: ['details'],
+  props: {
+    details: Object
+  },
   filters: {
     truncate: function (text, length, suffix) {
       return text.length > length ? (text.substring(0, length) + suffix) : text

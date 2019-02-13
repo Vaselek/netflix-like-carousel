@@ -19,8 +19,11 @@ export default {
   name: 'MovieCarousel',
   data () {
     return {
-      movies: movieSeeds
+      movies: null
     }
+  },
+  mounted () {
+    this.movies = movieSeeds
   },
   components: {
     MovieItem
