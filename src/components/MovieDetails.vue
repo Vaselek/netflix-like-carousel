@@ -12,18 +12,18 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'MovieDetails',
-    props: ['details'],
-    filters: {
-      truncate: function (text, length, suffix) {
-        return text.length > length ? (text.substring(0, length) + suffix) : text
-      },
-      listGenres: function (genres) {
-        return genres.join(' * ')
-      }
+export default {
+  name: 'MovieDetails',
+  props: ['details'],
+  filters: {
+    truncate: function (text, length, suffix) {
+      return text.length > length ? (text.substring(0, length) + suffix) : text
+    },
+    listGenres: function (genres) {
+      return genres.join(' * ')
     }
   }
+}
 </script>
 <style scoped>
   .movie__details {

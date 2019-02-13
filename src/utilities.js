@@ -78,5 +78,5 @@ export const movieSeeds = [
       seasonsQty: 3,
       genres: ['Detective', 'Triller']
     }
-  },
+  }
 ]

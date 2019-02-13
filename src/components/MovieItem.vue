@@ -19,7 +19,7 @@ export default {
     mouseOver: function () {
       this.$refs.videoElem.play()
     },
-    mouseLeave: function() {
+    mouseLeave: function () {
       this.$refs.videoElem.pause()
     }
   },
